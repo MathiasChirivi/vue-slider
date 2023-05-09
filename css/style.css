@@ -32,6 +32,11 @@
     color: white;
 }
 
+.text{
+    width: 90%;
+    background-color: rgb(0,0,0,0.8);
+}
+
 .thumbs {
     float: left;
     height: 300px;
