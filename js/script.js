@@ -31,19 +31,18 @@ createApp({
     }, 
     methods:{
         next(){
+            this.activeImage++;
+
             if(this.activeImage > this.slides.lenght - 1){
                 this.activeImage = 0;
             }
-
-            this.activeImage++;
         },
         prev(){
+            this.activeImage--;
+
             if(this.activeImage < 0){
                 this.activeImage > this.slides.lenght - 1;
             }
-            
-            this.activeImage--;
-
         },
     }
 }).mount('#app')
