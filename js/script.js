@@ -31,7 +31,7 @@ createApp({
     }, 
     methods:{
         next(){
-            if(this.activeImage == this.image.length-1){
+            if(this.activeImage == this.slides.length-1){
                 this.activeImage = 0;
             }else{
                 this.activeImage++
@@ -40,11 +40,27 @@ createApp({
         prev(){
             this.activeImage--;
             if(this.activeImage<0){
-                this.activeImage = this.image.length-1;
+                this.activeImage = this.slides.length-1;
             }
         },
         changeImages(index){
             this.activeImage = index;
+        },
+        setAutoScroll(){
+            if(this.autoScroll == null){
+                this.setAutoScrollOn();
+            }else {
+                this.autoScrollOff();
+            }
+        },
+        setAutoScrollOn(){
+            this.autoScroll = setInterval(() => {
+                this.next();
+            }, 3*1000)
+        },
+        setAutoScrollOff(){
+            clearInterval(this.autoScroll);
+            this.autoScroll = null;
         }
-    }
+    },
 }).mount('#app')
