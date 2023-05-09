@@ -45,6 +45,25 @@ createApp({
         },
         changeImages(index){
             this.activeImage = index;
+        },
+        //setAutoScroll(){
+        //    if(this.autoScroll == null){
+        //        this.setAutoScrollOn();
+        //    }else {
+        //        this.setAutoScrollOff();
+        //    }
+        //},
+        setAutoScrollOn(){
+            this.autoScroll = setInterval(() => {
+                this.next();
+            }, 3000)
+        },
+        setAutoScrollOff(){
+            clearInterval(this.autoScroll);
+            this.autoScroll = null;
+        },
+        mounted(){
+            this.setAutoScrollOn();
         }
     },
 }).mount('#app')

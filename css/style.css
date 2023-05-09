@@ -24,6 +24,19 @@
     object-fit: cover;
 }
 
+.item > .autoScroll{
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    border:  0px solid rgb(255, 255, 255);
+    background-color: green;
+    color: white;
+    width: 100%;
+    height: 15px;
+    cursor:pointer;
+
+}
+
 .item .text {
     position: absolute;
     right: 20px;

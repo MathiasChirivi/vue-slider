@@ -16,13 +16,14 @@
                 <div class="slider-wrapper" tabindex="0">
                     
                     <div class="item">
-                        <img :src="slides[activeImage].image" alt="">
+                        <img :src="slides[activeImage].image" @mouseover="setAutoScrollOff" @mouseleave="setAutoScrollOn" alt="">
                         <div class="text">
                             <h3>{{slides[activeImage].title}}</h3>
                             <p>
                                 {{slides[activeImage].text}}
                             </p>
                         </div>
+                        <!-- <button class="autoScroll" @click="setAutoScroll()">Autoplay {{autoScroll == null ? "ON" : "OFF"}} </button> -->
                     </div>  
                         <div class="thumbs">
                             <div class="prev" @click = "prev"></div>
