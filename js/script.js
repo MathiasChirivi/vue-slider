@@ -31,19 +31,20 @@ createApp({
     }, 
     methods:{
         next(){
-            if(this.activeImage == 0){
-                this.activeImage = 4;
+            if(this.activeImage == this.image.length-1){
+                this.activeImage = 0;
             }else{
-                this.activeImage--;
+                this.activeImage++
             }
         },
         prev(){
-            if(this.activeImage == 4){
-                this.activeImage = 0;
+            this.activeImage--;
+            if(this.activeImage<0){
+                this.activeImage = this.image.length-1;
             }
-            else{
-                this.activeImage++;
-            }
+        },
+        changeImages(index){
+            this.activeImage = index;
         }
     }
 }).mount('#app')
