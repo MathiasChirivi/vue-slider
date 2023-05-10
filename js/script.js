@@ -62,8 +62,8 @@ createApp({
             clearInterval(this.autoScroll);
             this.autoScroll = null;
         },
-        mounted(){
-            this.setAutoScrollOn();
-        }
     },
+    mounted(){
+        this.setAutoScrollOn();
+    }
 }).mount('#app')
